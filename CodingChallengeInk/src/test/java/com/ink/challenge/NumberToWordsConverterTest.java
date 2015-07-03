@@ -126,4 +126,10 @@ public class NumberToWordsConverterTest {
 				.convert(1999999999);
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void illegalArgumentNegative() {
+		String numberInEnglish = NumberToWordsConverterFactory
+				.getNumberToWordsConverter(Locale.ENGLISH.getLanguage())
+				.convert(-5);
+	}
 }

@@ -19,6 +19,8 @@ public class EnglishNumberToWordsConverter implements NumberToWordsConverter {
 	public String convert(int numberToTransform) {
 		if (numberToTransform > 999999999) {
 			throw new IllegalArgumentException("number is >  999999999");
+		}else if(numberToTransform < 0){
+			throw new IllegalArgumentException("number is negative");
 		}
 		return executeConversion(numberToTransform);
 	}
